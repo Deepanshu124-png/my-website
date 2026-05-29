@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catch Me Game</title>
+
+    <style>
+        body{
+            margin:0;
+            background:linear-gradient(45deg,#1e3c72,#2a5298);
+            font-family:Arial;
+            text-align:center;
+            color:white;
+            overflow:hidden;
+        }
+
+        h1{
+            margin-top:20px;
+        }
+
+        #score{
+            font-size:40px;
+        }
+
+        #btn{
+            position:absolute;
+            left:100px;
+            top:250px;
+            padding:15px 25px;
+            font-size:20px;
+            border:none;
+            border-radius:10px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎮 Catch Me If You Can</h1>
+
+    <h2>Score: <span id="score">0</span></h2>
+
+    <button id="btn" onclick="moveButton()">
+        Catch Me 😜
+    </button>
+
+    <script>
+
+        let score = 0;
+
+        function moveButton(){
+
+            score++;
+
+            document.getElementById("score").innerHTML = score;
+
+            let maxX = window.innerWidth - 150;
+            let maxY = window.innerHeight - 100;
+
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+
+            let btn = document.getElementById("btn");
+
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+
+            if(score == 10){
+                alert("🔥 Level Up!");
+            }
+
+            if(score == 25){
+                alert("🚀 Pro Player!");
+            }
+
+            if(score == 50){
+                alert("👑 Legend!");
+            }
+        }
+
+    </script>
+
+</body>
+</html>
