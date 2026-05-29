@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>System Breach</title>
+
+<style>
+body{
+    background:#000;
+    color:#00ff55;
+    font-family:Consolas,monospace;
+    margin:0;
+    overflow:hidden;
+}
+
+.matrix{
+    position:fixed;
+    inset:0;
+    opacity:0.15;
+    pointer-events:none;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.box{
+    border:2px solid #00ff55;
+    padding:20px;
+    margin:20px 0;
+    box-shadow:0 0 15px #00ff55;
+}
+
+.red{
+    color:red;
+    text-align:center;
+    font-size:55px;
+    text-shadow:0 0 20px red;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:.4;}
+}
+
+.progress{
+    width:100%;
+    height:30px;
+    border:1px solid #00ff55;
+}
+
+.bar{
+    width:0%;
+    height:100%;
+    background:#00ff55;
+}
+
+button{
+    display:block;
+    margin:30px auto;
+    padding:15px 40px;
+    background:black;
+    color:#00ff55;
+    border:2px solid #00ff55;
+    font-size:22px;
+}
+
+button:hover{
+    box-shadow:0 0 20px #00ff55;
+}
+
+.log{
+    line-height:2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<p>SYSTEM STATUS</p>
+<p>> CONNECTED TO UNKNOWN IP</p>
+<p>> BYPASSING FIREWALL...</p>
+<p>> ACCESS GRANTED</p>
+
+<h1 class="red">⚠ YOUR DEVICE IS HACKED ⚠</h1>
+
+<div class="box">
+<h2>UNAUTHORIZED ACCESS DETECTED</h2>
+
+<p>Downloading Personal Data...</p>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<h3 id="percent">0%</h3>
+
+<div class="log">
+<p>> Contacts ........ [FOUND]</p>
+<p>> Messages ........ [FOUND]</p>
+<p>> Photos .......... [FOUND]</p>
+<p>> Passwords ....... [FOUND]</p>
+<p>> Bank Details .... [FOUND]</p>
+</div>
+</div>
+
+<div class="box">
+<h3>// TERMINAL</h3>
+
+<p>root@system:~# whoami</p>
+<p>root</p>
+
+<p>root@system:~# access_granted</p>
+<p>ACCESS GRANTED</p>
+
+<p>root@system:~# initiate_prank.exe</p>
+<p>PRANK MODE ACTIVATED 😈</p>
+</div>
+
+<button onclick="reveal()">TRY TO FIX IT</button>
+
+</div>
+
+<script>
+let p=0;
+
+let x=setInterval(()=>{
+    p++;
+    document.getElementById("bar").style.width=p+"%";
+    document.getElementById("percent").innerText=p+"%";
+
+    if(p>=100){
+        clearInterval(x);
+    }
+},50);
+
+function reveal(){
+document.body.innerHTML=`
+<div style="text-align:center;
+margin-top:150px;
+font-family:Consolas;
+color:#00ff55">
+<h1 style="font-size:70px">😂 GOTCHA 😂</h1>
+<h2>Relax bro, this was only a prank.</h2>
+</div>
+`;
+}
+</script>
+
+</body>
+</html>
